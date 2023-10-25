@@ -34,6 +34,7 @@ input:focus {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  min-height: 750px;
   width: 100%;
   background-color: #c5e4e7;
   font-family: 'Space Mono', monospace;
@@ -59,7 +60,7 @@ input:focus {
   padding: 32px;
   background-color: white;
   width: 950px;
-  height: 500px;
+  min-height: 500px;
   border-radius: 24px;
   box-shadow: 0px 0px 20px 25px #00474b18;
 }
@@ -188,4 +189,47 @@ input:focus {
   background-color: #0d686d;
   color: #065e62;
   cursor: not-allowed;
+}
+
+@media(max-width: 1000px) {
+  .splitter-body {
+    transform: scale(.77);
+  }
+}
+
+@media(max-width: 750px) {
+  .splitter-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 800px;
+  }
+
+  .splitter-title-container {
+    margin-bottom: 0px;
+    transform: translateY(48px);
+  }
+  
+  .splitter-body {
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    width: 450px;
+  }
+
+  .splitter-left {
+    margin-bottom: 16px;
+  }
+
+  .splitter-left, .splitter-right {
+    width: 100%;
+    height: 375px;
+  }
+
+  .tip-input {
+    font-size: 20px;
+  }
+
+  .total-amount-right {
+    font-size: 32px;
+  }
 }
