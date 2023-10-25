@@ -124,6 +124,21 @@ input:focus {
   color: #406365;
 }
 
+.patron-label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.error-message {
+  color: #f10707a4;
+}
+
+.people-input-error:focus, .people-input-error {
+  outline: none !important;
+  border: 2px solid #f1070788;
+  border-radius: 4px;
+}
+
 .splitter-right {
   display: flex;
   flex-direction: column;
