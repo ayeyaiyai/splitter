@@ -65,6 +65,7 @@ function App() {
             <input
             className='splitter-input'
             placeholder='0'
+            pattern="[0-9]*"
             value={bill}
             onChange={(e) => setBill(e.target.value)}
             >
@@ -83,6 +84,7 @@ function App() {
               <input 
               className='tip-input'
               placeholder='Custom'
+              pattern="[0-9]*"
               value={tipPercent}
               onChange={(e) => setTipPercent(e.target.value)}
               ></input>
@@ -92,6 +94,7 @@ function App() {
             <div className='section-label patron-label'><div>Number of People</div><div className='error-message'>{`${peopleError ? "Can't be zero" : ''}`}</div></div>
             
             <input
+            pattern="[0-9]*"
             className={`splitter-input ${peopleError ? 'people-input-error' : ''}`}
             placeholder='0'
             value={numberOfPeople}
