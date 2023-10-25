@@ -168,3 +168,9 @@ input:focus {
   background-color: #27c2ac;
   color: #00474b;
 }
+
+.reset-button-inactive, .reset-button-inactive:hover {
+  background-color: #0d686d;
+  color: #065e62;
+  cursor: not-allowed;
+}
