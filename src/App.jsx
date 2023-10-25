@@ -10,12 +10,18 @@ function App() {
   const [billTotal, setBillTotal] = useState(0);
   
   const [inactive, setInactive] = useState(true);
+  const [peopleError, setPeopleError] = useState(false);
 
   useEffect(() => {
     inactiveButton();
-    if (bill && tipPercent && numberOfPeople) {
+    if (numberOfPeople === '0') {
+      setPeopleError(true);
+    }
+    else if ((bill && tipPercent && numberOfPeople)) {
       setTipTotal((bill * (Number(tipPercent) / 100)) / numberOfPeople);
-    } else {
+    } 
+    else {
+      setPeopleError(false);
       setTipTotal(0);
       setBillTotal(0);
     }
@@ -83,9 +89,10 @@ function App() {
             </div>
           </div>
           <div className='patron-label-container'>
-            <div className='section-label'>Number of People</div>
+            <div className='section-label patron-label'><div>Number of People</div><div className='error-message'>{`${peopleError ? "Can't be zero" : ''}`}</div></div>
+            
             <input
-            className='splitter-input'
+            className={`splitter-input ${peopleError ? 'people-input-error' : ''}`}
             placeholder='0'
             value={numberOfPeople}
             onChange={(e) => setNumberOfPeople(e.target.value)}
